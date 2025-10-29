@@ -31,13 +31,13 @@ class UsersList extends HTMLElement {
   }
 
   connectedCallback() {
+    this.renderList();
     this.shadowRoot.addEventListener("click", (e) => {
       if (e.target.matches(".remove-btn")) {
         const index = parseInt(e.target.getAttribute("data-index"));
         this.removeUser(index);
       }
     });
-    this.renderList();
   }
 
   renderList() {
